@@ -1,0 +1,8 @@
+// Question 2: Retrieve all providers
+app.get('/providers', (req, res) => {
+  const sql = 'SELECT first_name, last_name, provider_specialty FROM providers';
+  db.query(sql, (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+});
